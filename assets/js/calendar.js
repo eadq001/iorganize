@@ -276,6 +276,22 @@ async function deleteEvent(eventId) {
 
 // Attach event listeners
 function attachEventListeners() {
+    // Day click to add event
+    const days = document.querySelectorAll('.calendar-day');
+    days.forEach(day => {
+        day.addEventListener('click', (e) => {
+            if (e.target.classList.contains('calendar-day') || e.target.classList.contains('calendar-day-number')) {
+                const date = day.dataset.date;
+                if (date) {
+                    openEventModal(null, date);
+                }
+            }
+        });
+    });
+}
+
+// Initialize static event listeners (called once on page load)
+function initializeEventListeners() {
     // Event form
     const form = document.getElementById('eventForm');
     if (form) {
@@ -321,19 +337,6 @@ function attachEventListeners() {
             }
         };
     }
-    
-    // Day click to add event
-    const days = document.querySelectorAll('.calendar-day');
-    days.forEach(day => {
-        day.addEventListener('click', (e) => {
-            if (e.target.classList.contains('calendar-day') || e.target.classList.contains('calendar-day-number')) {
-                const date = day.dataset.date;
-                if (date) {
-                    openEventModal(null, date);
-                }
-            }
-        });
-    });
 }
 
 // Helper functions
@@ -366,5 +369,8 @@ function escapeHtml(text) {
 }
 
 // Load calendar on page load
-document.addEventListener('DOMContentLoaded', loadCalendar);
+document.addEventListener('DOMContentLoaded', () => {
+    loadCalendar();
+    initializeEventListeners();
+});
 

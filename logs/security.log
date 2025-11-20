@@ -278,3 +278,7 @@
 2025-11-20 07:02:43 - [low] recaptcha_attempt: reCAPTCHA response: success=true, score=N/A (User: , IP: 131.226.115.0)
 2025-11-20 07:02:44 - [low] login_success: Successful login: otugaykristyl698@gmail.com (User: 8, IP: 131.226.115.0)
 2025-11-20 07:04:36 - [low] logout: User logged out (User: 8, IP: 131.226.115.0)
+2025-11-20 09:07:32 - [low] calendar_event_created: Event created: asdsadas (User: 5, IP: ::1)
+2025-11-20 09:08:13 - [low] calendar_event_created: Event created: ehrrweh (User: 5, IP: ::1)
+2025-11-20 09:08:13 - [low] calendar_event_created: Event created: ehrrweh (User: 5, IP: ::1)
+2025-11-20 09:11:28 - [low] calendar_event_created: Event created: sscaxcxcac (User: 5, IP: ::1)

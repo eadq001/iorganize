@@ -121,12 +121,15 @@ a:hover {
     background: transparent;
 }
 
-.nav-link:hover,
-.nav-link.active {
+.nav-link:hover, .nav-link.active {
+    background-color: var(--muted-color);
+    color: white;
+}
+/* .nav-link.active {
     color: var(--primary-color);
     background: rgba(124,58,237,0.1);
     transform: translateY(-2px);
-}
+} */
 
 .nav-user {
     color: var(--muted-color);
