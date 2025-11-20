@@ -1,0 +1,70 @@
+[17-Nov-2025 14:47:21 UTC] Database connection error: Unknown database 'iorganize'
+[18-Nov-2025 20:09:04 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate entry 'ashleygwenguiral56@gmail.com' for key 'email' in /home/u768796151/domains/iorganize.site/public_html/register.php:171
+Stack trace:
+#0 /home/u768796151/domains/iorganize.site/public_html/register.php(171): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/u768796151/domains/iorganize.site/public_html/register.php on line 171
+[18-Nov-2025 20:09:55 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate entry 'ashleygwenguiral56@gmail.com' for key 'email' in /home/u768796151/domains/iorganize.site/public_html/register.php:171
+Stack trace:
+#0 /home/u768796151/domains/iorganize.site/public_html/register.php(171): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/u768796151/domains/iorganize.site/public_html/register.php on line 171
+[20-Nov-2025 06:33:41 UTC] PHP Fatal error:  Uncaught Error: mysqli object is already closed in /home/u768796151/domains/iorganize.site/public_html/register.php:195
+Stack trace:
+#0 /home/u768796151/domains/iorganize.site/public_html/register.php(195): mysqli->close()
+#1 {main}
+  thrown in /home/u768796151/domains/iorganize.site/public_html/register.php on line 195
+[20-Nov-2025 06:33:54 UTC] PHP Fatal error:  Uncaught Error: mysqli object is already closed in /home/u768796151/domains/iorganize.site/public_html/register.php:195
+Stack trace:
+#0 /home/u768796151/domains/iorganize.site/public_html/register.php(195): mysqli->close()
+#1 {main}
+  thrown in /home/u768796151/domains/iorganize.site/public_html/register.php on line 195
+[20-Nov-2025 06:38:59 UTC] PHP Fatal error:  Uncaught Error: mysqli object is already closed in /home/u768796151/domains/iorganize.site/public_html/register.php:195
+Stack trace:
+#0 /home/u768796151/domains/iorganize.site/public_html/register.php(195): mysqli->close()
+#1 {main}
+  thrown in /home/u768796151/domains/iorganize.site/public_html/register.php on line 195
+[20-Nov-2025 06:42:43 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate entry 'teriotekylamarie@gmail.com' for key 'email' in /home/u768796151/domains/iorganize.site/public_html/register.php:171
+Stack trace:
+#0 /home/u768796151/domains/iorganize.site/public_html/register.php(171): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/u768796151/domains/iorganize.site/public_html/register.php on line 171
+[20-Nov-2025 06:44:20 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate entry 'teriotekylamarie@gmail.com' for key 'email' in /home/u768796151/domains/iorganize.site/public_html/register.php:171
+Stack trace:
+#0 /home/u768796151/domains/iorganize.site/public_html/register.php(171): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/u768796151/domains/iorganize.site/public_html/register.php on line 171
+[20-Nov-2025 06:44:27 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate entry 'teriotekylamarie@gmail.com' for key 'email' in /home/u768796151/domains/iorganize.site/public_html/register.php:171
+Stack trace:
+#0 /home/u768796151/domains/iorganize.site/public_html/register.php(171): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/u768796151/domains/iorganize.site/public_html/register.php on line 171
+[20-Nov-2025 06:45:16 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate entry 'teriotekylamarie@gmail.com' for key 'email' in /home/u768796151/domains/iorganize.site/public_html/register.php:171
+Stack trace:
+#0 /home/u768796151/domains/iorganize.site/public_html/register.php(171): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/u768796151/domains/iorganize.site/public_html/register.php on line 171
+[20-Nov-2025 06:45:27 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate entry 'teriotekylamarie@gmail.com' for key 'email' in /home/u768796151/domains/iorganize.site/public_html/register.php:171
+Stack trace:
+#0 /home/u768796151/domains/iorganize.site/public_html/register.php(171): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/u768796151/domains/iorganize.site/public_html/register.php on line 171
+[20-Nov-2025 06:46:01 UTC] PHP Fatal error:  Uncaught mysqli_sql_exception: Duplicate entry 'teriotekylamarie@gmail.com' for key 'email' in /home/u768796151/domains/iorganize.site/public_html/register.php:171
+Stack trace:
+#0 /home/u768796151/domains/iorganize.site/public_html/register.php(171): mysqli_stmt->execute()
+#1 {main}
+  thrown in /home/u768796151/domains/iorganize.site/public_html/register.php on line 171
+[20-Nov-2025 07:10:21 UTC] Database connection error: Access denied for user 'u768796151_iorganize'@'localhost' (using password: YES)
+[20-Nov-2025 07:11:26 UTC] Database connection error: Access denied for user 'u768796151_iorganize'@'localhost' (using password: YES)
+[20-Nov-2025 07:11:30 UTC] Database connection error: Access denied for user 'u768796151_iorganize'@'localhost' (using password: YES)
+[20-Nov-2025 07:11:34 UTC] Database connection error: Access denied for user 'u768796151_iorganize'@'localhost' (using password: YES)
+[20-Nov-2025 07:11:35 UTC] Database connection error: Access denied for user 'u768796151_iorganize'@'localhost' (using password: YES)
+[20-Nov-2025 07:11:46 UTC] Database connection error: Access denied for user 'u768796151_iorganize'@'localhost' (using password: YES)
+[20-Nov-2025 07:12:27 UTC] Database connection error: Access denied for user 'u768796151_iorganize'@'localhost' (using password: YES)
+[20-Nov-2025 07:12:29 UTC] Database connection error: Access denied for user 'u768796151_iorganize'@'localhost' (using password: YES)
+[20-Nov-2025 07:12:31 UTC] Database connection error: Access denied for user 'u768796151_iorganize'@'localhost' (using password: YES)
+[20-Nov-2025 07:12:32 UTC] Database connection error: Access denied for user 'u768796151_iorganize'@'localhost' (using password: YES)
+[20-Nov-2025 07:12:33 UTC] Database connection error: Access denied for user 'u768796151_iorganize'@'localhost' (using password: YES)
+[20-Nov-2025 07:12:36 UTC] Database connection error: Access denied for user 'u768796151_iorganize'@'localhost' (using password: YES)
+[20-Nov-2025 07:12:38 UTC] Database connection error: Access denied for user 'u768796151_iorganize'@'localhost' (using password: YES)
+[20-Nov-2025 07:12:40 UTC] Database connection error: Access denied for user 'u768796151_iorganize'@'localhost' (using password: YES)
