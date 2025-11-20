@@ -270,13 +270,30 @@ async function deleteStickyNote(noteId) {
 
 // Change note color
 function changeNoteColor(noteId) {
-    const color = prompt('Enter a color (hex code):', '#f1c40f');
-    if (color) {
-        const note = stickyNotes.find(n => n.id === noteId);
-        if (note) {
-            updateStickyNoteColor(noteId, color);
+    const note = stickyNotes.find(n => n.id === noteId);
+    if (!note) return;
+    
+    // Create a hidden color input and trigger it
+    const colorInput = document.createElement('input');
+    colorInput.type = 'color';
+    colorInput.value = note.color;
+    
+    colorInput.addEventListener('change', (e) => {
+        const newColor = e.target.value;
+        updateStickyNoteColor(noteId, newColor);
+    });
+    
+    // Also update in real-time as user moves through the color picker
+    colorInput.addEventListener('input', (e) => {
+        const newColor = e.target.value;
+        const noteElement = document.querySelector(`.sticky-note[data-id="${noteId}"]`);
+        if (noteElement) {
+            noteElement.style.background = newColor;
         }
-    }
+    });
+    
+    // Trigger the color picker
+    colorInput.click();
 }
 
 // Update sticky note color
