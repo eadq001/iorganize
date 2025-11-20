@@ -115,3 +115,66 @@
     margin-right: 0.5rem;
 }
 
+/* Settings Sections */
+.settings-section {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba(124,58,237,0.12);
+}
+
+.settings-section:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.settings-section h4 {
+    margin-bottom: 1rem;
+    color: var(--dark-color);
+    font-size: 1.1rem;
+}
+
+/* Forms in settings */
+.settings-card .form-group {
+    margin-bottom: 1rem;
+}
+
+.settings-card .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--dark-color);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.settings-card .form-group input,
+.settings-card .form-group textarea,
+.settings-card .form-group select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid rgba(124,58,237,0.2);
+    border-radius: 12px;
+    font-size: 0.95rem;
+    background: white;
+    color: var(--dark-color);
+    transition: all 0.3s ease;
+}
+
+.settings-card .form-group input:focus,
+.settings-card .form-group textarea:focus,
+.settings-card .form-group select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(124,58,237,0.1);
+}
+
+.settings-card .form-group input:disabled {
+    background: rgba(124,58,237,0.05);
+    cursor: not-allowed;
+}
+
+/* Form actions */
+.settings-section .btn {
+    margin-top: 0.5rem;
+}
+
