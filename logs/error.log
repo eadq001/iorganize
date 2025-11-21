@@ -188,3 +188,11 @@ Stack trace:
 [21-Nov-2025 01:00:56 UTC] Calendar API - Method: GET, userId=Type: integer, Value: 1, SESSION['user_id']=1
 [21-Nov-2025 01:01:12 UTC] Calendar API - Method: GET, userId=Type: integer, Value: 1, SESSION['user_id']=1
 [21-Nov-2025 01:01:14 UTC] Calendar API - Method: GET, userId=Type: integer, Value: 1, SESSION['user_id']=1
+[21-Nov-2025 01:25:42 UTC] Calendar API - Method: GET, userId=Type: integer, Value: 1, SESSION['user_id']=1
+[21-Nov-2025 01:37:34 UTC] PHP Warning:  Undefined array key "title" in C:\Users\eadq.DESKTOP-EPHFA89\Downloads\iorganize-main\iorganize-main\api\backup.php on line 214
+[21-Nov-2025 01:37:34 UTC] PHP Deprecated:  mysqli::real_escape_string(): Passing null to parameter #1 ($string) of type string is deprecated in C:\Users\eadq.DESKTOP-EPHFA89\Downloads\iorganize-main\iorganize-main\api\backup.php on line 214
+[21-Nov-2025 01:42:36 UTC] Calendar API - Method: GET, userId=Type: integer, Value: 1, SESSION['user_id']=1
+[21-Nov-2025 01:42:38 UTC] Calendar API - Method: GET, userId=Type: integer, Value: 1, SESSION['user_id']=1
+[21-Nov-2025 01:42:41 UTC] Calendar API - Method: GET, userId=Type: integer, Value: 1, SESSION['user_id']=1
+[21-Nov-2025 01:42:45 UTC] Calendar API - Method: GET, userId=Type: integer, Value: 1, SESSION['user_id']=1
+[21-Nov-2025 01:43:00 UTC] Calendar API - Method: GET, userId=Type: integer, Value: 1, SESSION['user_id']=1

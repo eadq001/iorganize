@@ -211,21 +211,22 @@ if ($action === 'import' && $_SERVER['REQUEST_METHOD'] === 'POST') {
         
         // Import sticky notes
         foreach ($backupData['sticky_notes'] as $note) {
-            $title = $conn->real_escape_string($note['title']);
-            $content = $conn->real_escape_string($note['content']);
+            $content = $conn->real_escape_string($note['content'] ?? '');
             $color = $note['color'] ?? '#ffeb3b';
+            $posX = intval($note['position_x'] ?? 0);
+            $posY = intval($note['position_y'] ?? 0);
             
             // Check if note already exists (to avoid duplicates when merging)
             if ($merge) {
-                $checkQuery = "SELECT id FROM sticky_notes WHERE user_id = $userId AND title = '$title' AND content = '$content'";
+                $checkQuery = "SELECT id FROM sticky_notes WHERE user_id = $userId AND content = '$content'";
                 $checkResult = $conn->query($checkQuery);
                 if ($checkResult && $checkResult->num_rows > 0) {
                     continue; // Skip duplicate
                 }
             }
             
-            $query = "INSERT INTO sticky_notes (user_id, title, content, color) 
-                      VALUES ($userId, '$title', '$content', '$color')";
+            $query = "INSERT INTO sticky_notes (user_id, content, color, position_x, position_y) 
+                      VALUES ($userId, '$content', '$color', $posX, $posY)";
             $conn->query($query);
             $importedCount++;
         }

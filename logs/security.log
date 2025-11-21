@@ -402,3 +402,7 @@
 2025-11-21 00:59:42 - [low] backup_created: Backup created with 1 calendar events, 0 diary entries, 0 sticky notes (User: 1, IP: ::1)
 2025-11-21 01:00:25 - [medium] backup_imported: Imported backup with 1 items. Merge: no (User: 1, IP: ::1)
 2025-11-21 01:01:05 - [medium] backup_imported: Imported backup with 1 items. Merge: no (User: 1, IP: ::1)
+2025-11-21 01:37:45 - [medium] backup_imported: Imported backup with 1 items. Merge: yes (User: 1, IP: ::1)
+2025-11-21 01:42:26 - [medium] backup_imported: Imported backup with 2 items. Merge: yes (User: 1, IP: ::1)
+2025-11-21 01:42:33 - [medium] backup_imported: Imported backup with 3 items. Merge: no (User: 1, IP: ::1)
+2025-11-21 01:42:58 - [medium] backup_imported: Imported backup with 1 items. Merge: no (User: 1, IP: ::1)
