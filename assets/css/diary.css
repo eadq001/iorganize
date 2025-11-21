@@ -1,0 +1,140 @@
+/* Diary Styles */
+
+.diary-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.diary-container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 1.5rem;
+    height: calc(100vh - 200px);
+}
+
+.diary-sidebar {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    overflow-y: auto;
+    border: 1px solid rgba(124,58,237,0.12);
+}
+
+.diary-sidebar h3 {
+    margin-bottom: 1rem;
+    color: var(--dark-color);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.diary-filter {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    margin-bottom: 1.2rem;
+}
+
+.diary-filter input {
+    padding: 0.6rem 0.8rem;
+    border: 1px solid rgba(124,58,237,0.18);
+    border-radius: 12px;
+    background: #fff;
+    color: var(--text-color);
+}
+
+.diary-entries-list {
+    max-height: calc(100vh - 400px);
+    overflow-y: auto;
+    padding-right: 0.3rem;
+}
+
+.diary-entry-item {
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    background: #f8f5ff;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+    border: 1px solid rgba(124,58,237,0.15);
+}
+
+.diary-entry-item:hover {
+    background: #efe7ff;
+    transform: translateX(5px);
+}
+
+.diary-entry-item.active {
+    background: linear-gradient(120deg, var(--secondary-color), var(--primary-color));
+    color: white;
+    border-color: transparent;
+}
+
+.diary-entry-item .entry-title {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.diary-entry-item .entry-date {
+    font-size: 0.8rem;
+    color: var(--muted-color);
+}
+
+.diary-entry-item .entry-mood {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+.diary-content {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 28px;
+    box-shadow: var(--shadow);
+    overflow-y: auto;
+    border: 1px solid rgba(124,58,237,0.12);
+}
+
+.diary-editor {
+    min-height: 500px;
+}
+
+.diary-editor .placeholder {
+    text-align: center;
+    color: var(--muted-color);
+    padding: 3rem;
+}
+
+/* Quill Editor Styles */
+.ql-container {
+    font-size: 1rem;
+    font-family: inherit;
+    min-height: 400px;
+    background: #ffffff;
+    border-radius: 18px;
+    border: 1px solid rgba(124,58,237,0.15);
+}
+
+.ql-editor {
+    min-height: 400px;
+    color: var(--text-color);
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .diary-container {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+    
+    .diary-sidebar {
+        max-height: 320px;
+    }
+    
+    .diary-entries-list {
+        max-height: 220px;
+    }
+}
+
