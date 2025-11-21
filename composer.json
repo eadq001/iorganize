@@ -1,0 +1,15 @@
+{
+    "name": "phpmailer/phpmailer",
+    "autoload": {
+        "psr-4": {
+            "Phpmailer\\Phpmailer\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "eadq001",
+            "email": "125347731+eadq001@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}

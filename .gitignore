@@ -1,3 +1,5 @@
 wp-admin/
 wp-includes/
 wp-content/
+
+/vendor/

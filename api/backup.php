@@ -170,8 +170,18 @@ if ($action === 'import' && $_SERVER['REQUEST_METHOD'] === 'POST') {
             $category = $event['category'] ?? 'personal';
             $color = $event['color'] ?? '#3498db';
             
+            // Check if event already exists (to avoid duplicates when merging)
+            if ($merge) {
+                $checkQuery = "SELECT id FROM calendar_events WHERE user_id = $userId AND title = '$title' AND event_date = '$eventDate'";
+                $checkResult = $conn->query($checkQuery);
+                if ($checkResult && $checkResult->num_rows > 0) {
+                    continue; // Skip duplicate
+                }
+            }
+            
+            $eventTimeValue = $eventTime ? "'$eventTime'" : "NULL";
             $query = "INSERT INTO calendar_events (user_id, title, description, event_date, event_time, category, color) 
-                      VALUES ($userId, '$title', '$description', '$eventDate', '$eventTime', '$category', '$color')";
+                      VALUES ($userId, '$title', '$description', '$eventDate', $eventTimeValue, '$category', '$color')";
             $conn->query($query);
             $importedCount++;
         }
@@ -179,13 +189,22 @@ if ($action === 'import' && $_SERVER['REQUEST_METHOD'] === 'POST') {
         // Import diary entries
         foreach ($backupData['diary_entries'] as $entry) {
             $title = $conn->real_escape_string($entry['title']);
-            $content = $conn->real_escape_string($entry['content']);
+            $content = $conn->real_escape_string($entry['content'] ?? '');
             $entry_date = $entry['entry_date'] ?? date('Y-m-d');
             $mood = $entry['mood'] ?? null;
-            $is_encrypted = $entry['is_encrypted'] ?? 0;
             
-            $query = "INSERT INTO diary_entries (user_id, title, content, entry_date, mood, is_encrypted) 
-                      VALUES ($userId, '$title', '$content', '$entry_date', '$mood', $is_encrypted)";
+            // Check if entry already exists (to avoid duplicates when merging)
+            if ($merge) {
+                $checkQuery = "SELECT id FROM diary_entries WHERE user_id = $userId AND title = '$title' AND entry_date = '$entry_date'";
+                $checkResult = $conn->query($checkQuery);
+                if ($checkResult && $checkResult->num_rows > 0) {
+                    continue; // Skip duplicate
+                }
+            }
+            
+            // Only use columns that exist in the database
+            $query = "INSERT INTO diary_entries (user_id, title, content, entry_date, mood) 
+                      VALUES ($userId, '$title', '$content', '$entry_date', " . ($mood ? "'$mood'" : "NULL") . ")";
             $conn->query($query);
             $importedCount++;
         }
@@ -195,6 +214,15 @@ if ($action === 'import' && $_SERVER['REQUEST_METHOD'] === 'POST') {
             $title = $conn->real_escape_string($note['title']);
             $content = $conn->real_escape_string($note['content']);
             $color = $note['color'] ?? '#ffeb3b';
+            
+            // Check if note already exists (to avoid duplicates when merging)
+            if ($merge) {
+                $checkQuery = "SELECT id FROM sticky_notes WHERE user_id = $userId AND title = '$title' AND content = '$content'";
+                $checkResult = $conn->query($checkQuery);
+                if ($checkResult && $checkResult->num_rows > 0) {
+                    continue; // Skip duplicate
+                }
+            }
             
             $query = "INSERT INTO sticky_notes (user_id, title, content, color) 
                       VALUES ($userId, '$title', '$content', '$color')";
