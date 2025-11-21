@@ -1,8 +1,13 @@
 {
-    "name": "phpmailer/phpmailer",
+    "name": "iorganize/app",
+    "description": "iOrganize - Personal Organization Application",
+    "type": "project",
+    "require": {
+        "phpmailer/phpmailer": "^6.8"
+    },
     "autoload": {
         "psr-4": {
-            "Phpmailer\\Phpmailer\\": "src/"
+            "App\\": "src/"
         }
     },
     "authors": [
@@ -10,6 +15,5 @@
             "name": "eadq001",
             "email": "125347731+eadq001@users.noreply.github.com"
         }
-    ],
-    "require": {}
+    ]
 }

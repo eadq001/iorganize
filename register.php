@@ -168,31 +168,46 @@ if (isset($_POST['verify_code'])) {
             $insert_stmt = $conn->prepare($insert_query);
             $insert_stmt->bind_param('ssss', $email, $username, $password_hash, $verification_code);
             
-            if ($insert_stmt->execute()) {
-                // Send verification code
-                if (sendVerificationCode($email, $verification_code)) {
-                    $show_verification = true;
-                    $verification_email = $email;
-                    $success = 'Verification code sent to your email. Please check your inbox.';
-                    logSecurityEvent('registration_started', "Verification code sent to: $email", 'low');
+            try {
+                if ($insert_stmt->execute()) {
+                    // Send verification code
+                    if (sendVerificationCode($email, $verification_code)) {
+                        $show_verification = true;
+                        $verification_email = $email;
+                        $success = 'Verification code sent to your email. Please check your inbox.';
+                        logSecurityEvent('registration_started', "Verification code sent to: $email", 'low');
+                    } else {
+                        $error = 'Failed to send verification code. Please try again.';
+                        // Delete the unverified record
+                        $delete_query = "DELETE FROM email_verifications WHERE email = ?";
+                        $delete_stmt = $conn->prepare($delete_query);
+                        $delete_stmt->bind_param('s', $email);
+                        $delete_stmt->execute();
+                        $delete_stmt->close();
+                        logSecurityEvent('email_send_failed', "Failed to send verification code to: $email", 'medium');
+                    }
                 } else {
-                    $error = 'Failed to send verification code. Please try again.';
-                    // Delete the unverified record
-                    $delete_query = "DELETE FROM email_verifications WHERE email = ?";
-                    $delete_stmt = $conn->prepare($delete_query);
-                    $delete_stmt->bind_param('s', $email);
-                    $delete_stmt->execute();
-                    $delete_stmt->close();
-                    logSecurityEvent('email_send_failed', "Failed to send verification code to: $email", 'medium');
+                    $error = 'Registration failed. Please try again.';
                 }
-            } else {
-                $error = 'Registration failed. Please try again.';
+            } catch (Exception $e) {
+                // Check if it's a duplicate entry error
+                if (strpos($e->getMessage(), 'Duplicate entry') !== false && strpos($e->getMessage(), 'email') !== false) {
+                    $error = 'This email is already registered. Please use a different email or try to login.';
+                    logSecurityEvent('registration_duplicate', "Registration attempt with existing email: $email", 'low');
+                } else {
+                    $error = 'Registration failed: ' . $e->getMessage();
+                    logSecurityEvent('registration_error', "Registration error for: $email - " . $e->getMessage(), 'medium');
+                }
             }
             
-            $insert_stmt->close();
+            if ($insert_stmt) {
+                $insert_stmt->close();
+            }
         }
         
-        $conn->close();
+        if ($conn) {
+            $conn->close();
+        }
     }
 }
 ?>
